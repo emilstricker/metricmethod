@@ -10,13 +10,14 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
     </head>
 
-    <body>
-        <div class="container">
-          <h1>Grams</h1>
-        <p>Today you have <%= dailyGrams %> grams available for consumption. The current sum of your eaten grams is: <%= sumGrams %></p>
-          <p>
+    <body class="text-center">
+                     <div class="container-fluid">
+  
+          <h1 class="display-1">Grams</h1>
+
+        <p>Today you have <%= dailyGrams %> grams available for consumption. <br>So far you have eaten <%= sumGrams %> grams.<br><br>
             This means that you have <%= dailyGrams - sumGrams %> grams available for consumption.
-          </p>
+          <br>
           
           <form action="/todo/add/" method="post">
             <p>
@@ -32,6 +33,7 @@
         </ul>
 
         
+      </div>
 
       </div>
     </body>
