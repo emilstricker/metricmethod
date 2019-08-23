@@ -12,26 +12,25 @@
 
     <body class="text-center">
                      <div class="container-fluid">
-  
+   <div class="form-group">
           <h1 class="display-1">Grams</h1>
 
         <p>Today you have <%= dailyGrams %> grams available for consumption. <br>So far you have eaten <%= sumGrams %> grams.<br><br>
-            This means that you have <%= dailyGrams - sumGrams %> grams available for consumption.
+            This means that you now have <%= dailyGrams - sumGrams %> grams available for consumption.
           <br>
           
           <form action="/todo/add/" method="post">
-            <p>
-                <label for="newtodo">How many grams did you eat?</label><br />
-                <input type="number" name="newtodo" id="newtodo" autofocus />
+            <p></p>
+                <input type="number" class="form-control" name="newtodo" placeholder="Enter your eaten grams" id="newtodo" autofocus />
                 <button class="btn btn-primary">Add!</button>
             </p>
         </form>
-        <ul>
+        <ul style="list-style-position: inside;">
         <% todolist.forEach(function(todo, index) { %>
             <li><a href="/todo/delete/<%= index %>"><i class="far fa-trash-alt" style="color: red;"></i></a> <%= todo %></li>
         <% }); %>
         </ul>
-
+      </div>
         
       </div>
 
