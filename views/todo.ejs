@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<% todolist.forEach(function(todo, index) { %>
+    <% sumGrams = sumGrams + Number(todo); %></li>
+<% }); %>
+<html>
+    <head>
+        <title>Grams</title>
+
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    </head>
+
+    <body>
+        <div class="container">
+          <h1>Grams</h1>
+        <p>Today you have <%= dailyGrams %> grams available for consumption. The current sum of your eaten grams is: <%= sumGrams %></p>
+          <p>
+            This means that you have <%= dailyGrams - sumGrams %> grams available for consumption.
+          </p>
+          
+          <form action="/todo/add/" method="post">
+            <p>
+                <label for="newtodo">How many grams did you eat?</label><br />
+                <input type="number" name="newtodo" id="newtodo" autofocus />
+                <button class="btn btn-primary">Add!</button>
+            </p>
+        </form>
+        <ul>
+        <% todolist.forEach(function(todo, index) { %>
+            <li><a href="/todo/delete/<%= index %>"><i class="far fa-trash-alt" style="color: red;"></i></a> <%= todo %></li>
+        <% }); %>
+        </ul>
+
+        
+
+      </div>
+    </body>
+</html>
