@@ -15,8 +15,8 @@
    <div class="form-group">
           <h1 class="display-1">Grams</h1>
 
-        <p>Today you have <%= dailyGrams %> grams available for consumption. <br>So far you have eaten <%= sumGrams %> grams.<br><br>
-            This means that you now have <%= dailyGrams - sumGrams %> grams available for consumption.
+        <p>You have <%= dailyGrams - sumGrams %> out of <%= dailyGrams %> grams available for consumption. <br>You have eaten <%= sumGrams %> grams.<br><br>
+  
           <br>
           
           <form action="/todo/add/" method="post">
