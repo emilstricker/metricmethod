@@ -5,7 +5,7 @@ var session = require('cookie-session'); // Loads the piece of middleware for se
 var bodyParser = require('body-parser'); // Loads the piece of middleware for managing the settings
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var sumGrams = 0;
-var dailyGrams = 1374;
+var dailyGrams = 1351;
 var app = express();
 
 /* Using the sessions */
