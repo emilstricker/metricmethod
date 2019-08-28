@@ -7,6 +7,7 @@
         <title>Grams</title>
 
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <link rel="stylesheet" href="/style.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
     </head>
 
@@ -15,7 +16,7 @@
    <div class="form-group">
           <h1 class="display-1">Grams</h1>
 
-        <p>You have <%= dailyGrams - sumGrams %> out of <%= dailyGrams %> grams available for consumption. <br>You have eaten <%= sumGrams %> grams.<br><br>
+        <p><strong><%= dailyGrams - sumGrams %></strong> out of <strong><%= dailyGrams %></strong> grams are available for consumption. <br>You have eaten <strong><%= sumGrams %></strong> grams.<br><br>
   
           <br>
           
