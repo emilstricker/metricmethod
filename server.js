@@ -16,7 +16,7 @@ we create an empty one in the form of an array before continuing */
 .use(function(req, res, next){
     if (typeof(req.session.todolist) == 'undefined') {
         req.session.todolist = [];
-        req.session.dailyGrams = 0;
+        req.session.dailyGrams = undefined;
     }
     next();
 })
@@ -34,7 +34,7 @@ we create an empty one in the form of an array before continuing */
     res.redirect('/todo');
 })
 
-/* Adding an item to the to do list */
+/* Adding an amount of daily grams */
 .post('/todo/daily/', urlencodedParser, function(req, res) {
     if (req.body.dailygs != '') {
         req.session.dailyGrams = req.body.dailygs;
@@ -42,6 +42,12 @@ we create an empty one in the form of an array before continuing */
     res.redirect('/todo');
 })
 
+/* Deletes the daily grams */
+.get('/todo/daily/delete', function(req, res) {
+    req.session.dailyGrams = "";
+    req.session.todolist = [];
+    res.redirect('/todo');
+})
 
 
 /* Deletes an item from the to do list */

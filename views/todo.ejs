@@ -42,6 +42,10 @@ body {
         font-family: 'Exo 2', sans-serif;
         font-size: 5rem;
       }
+      
+      a {
+        color: red;
+      }
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -97,7 +101,7 @@ body {
 <% todolist.forEach(function(todo, index) { %>
     <% sumGrams = sumGrams + Number(todo); %>
 <% }); %>
-        <p><strong><%= dailyGrams - sumGrams %></strong> out of <strong><%= dailyGrams %></strong> grams are available for consumption. <br>You have eaten <strong><%= sumGrams %></strong> grams.<br><br>
+          <p><strong><%= dailyGrams - sumGrams %></strong> out of <strong><a href="/todo/daily/delete/" title="Reset daily grams"><%= dailyGrams %></a></strong> grams are available for consumption. <br>You have eaten <strong><%= sumGrams %></strong> grams.<br><br>
   
           <br>
           
@@ -108,7 +112,7 @@ body {
         
         <ul class="list-group">
         <% todolist.forEach(function(todo, index) { %>
-            <li class="list-group-item"><a href="/todo/delete/<%= index %>"><i class="far fa-trash-alt" style="color: red;"></i></a> <a href="/todo/delete/<%= index %>"><%= todo %></a></li>
+            <li class="list-group-item"><a href="/todo/delete/<%= index %>" title="Delete"><i class="far fa-trash-alt" style="color: red;"></i></a> <a href="/todo/delete/<%= index %>" title="Delete"><%= todo %></a></li>
         <% }); %>
         </ul>
       <% } %>
