@@ -67,9 +67,43 @@ body {
   </head>
 
     <body class="text-center">
-      <form action="/todo/add/" method="post" class="form-signin">
+
+        <% if (todolist.length < 1 || todolist == undefined) { %>
+      <form action="/todo/daily/" method="post" class="form-signin">
+      <h1 class="h3 mb-3 font-weight-normal">Grams</h1>                             
+        
+        
+        
+        
+        
+        
+                <input type="number" class="form-control" name="dailygs" placeholder="Enter your daily grams" id="dailygs" autofocus />
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Add!</button>
+            </p>
+        
+        <ul class="list-group">
+        <% todolist.forEach(function(todo, index) { %>
+            <li class="list-group-item"><a href="/todo/delete/<%= index %>"><i class="far fa-trash-alt" style="color: red;"></i></a> <a href="/todo/delete/<%= index %>"><%= todo %></a></li>
+        <% }); %>
+        </ul>
+      <% } %>
+</form>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <% } else { %>
+        <form action="/todo/add/" method="post" class="form-signin">
       <h1 class="h3 mb-3 font-weight-normal">Grams</h1>
-        if todolist[0] 
 <% todolist.forEach(function(todo, index) { %>
     <% sumGrams = sumGrams + Number(todo); %>
 <% }); %>
@@ -87,6 +121,7 @@ body {
             <li class="list-group-item"><a href="/todo/delete/<%= index %>"><i class="far fa-trash-alt" style="color: red;"></i></a> <a href="/todo/delete/<%= index %>"><%= todo %></a></li>
         <% }); %>
         </ul>
+      <% } %>
 </form>
     </body>
 
