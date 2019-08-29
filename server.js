@@ -44,7 +44,7 @@ we create an empty one in the form of an array before continuing */
 
 /* Deletes the daily grams */
 .get('/todo/daily/delete', function(req, res) {
-    req.session.dailyGrams = "";
+    req.session.dailyGrams = undefined;
     req.session.todolist = [];
     res.redirect('/todo');
 })
