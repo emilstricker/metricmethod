@@ -78,7 +78,7 @@ body {
 
         <% if (todolist.length < 1 && dailyGrams == 0) { %>
       <form action="/todo/daily/" method="post" class="form-signin">
-      <h1 class="h3 mb-3 font-weight-normal">Grams</h1>                             
+      <h1>Grams</h1>                             
         
         
         
@@ -101,9 +101,8 @@ body {
 <% todolist.forEach(function(todo, index) { %>
     <% sumGrams = sumGrams + Number(todo); %>
 <% }); %>
-          <p><strong><%= dailyGrams - sumGrams %></strong> out of <strong><a href="/todo/daily/delete/" title="Reset daily grams"><%= dailyGrams %></a></strong> grams are available for consumption. <br>You have eaten <strong><%= sumGrams %></strong> grams.<br><br>
+          <p><strong><%= dailyGrams - sumGrams %></strong> out of <strong><a href="/todo/daily/delete/" title="Reset daily grams"><%= dailyGrams %></a></strong> grams are available for consumption. <br>You have eaten <strong><%= sumGrams %></strong> grams.<br>
   
-          <br>
           
                 <p></p>
                 <input type="number" class="form-control" name="newtodo" placeholder="Enter your eaten grams" id="newtodo" autofocus />
