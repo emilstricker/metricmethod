@@ -9,7 +9,9 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Exo+2:900&display=swap" rel="stylesheet">
     <title>Grams</title>
-    <link rel="icon" href="https://cdn.glitch.com/bb6e8092-b828-481e-b15f-78708eaa5a3c%2Ffavicon.ico?v=1567075254209">    
+    <link rel="icon" href="https://cdn.glitch.com/bb6e8092-b828-481e-b15f-78708eaa5a3c%2Ffavicon.ico?v=1567075254209">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.glitch.com/bb6e8092-b828-481e-b15f-78708eaa5a3c%2Fapple-touch-icon.png?v=1567075593611">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
@@ -73,7 +75,7 @@ body {
 
     <body class="text-center">
 
-        <% if (todolist.length < 1 && dailyGrams == 0) { %>
+        <% if (todolist.length < 1 && dailyGrams == undefined) { %>
       <form action="/todo/daily/" method="post" class="form-signin">
       <h1>Grams</h1>                             
         
