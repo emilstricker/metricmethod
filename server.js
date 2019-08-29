@@ -5,7 +5,6 @@ var session = require('cookie-session'); // Loads the piece of middleware for se
 var bodyParser = require('body-parser'); // Loads the piece of middleware for managing the settings
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var sumGrams = 0;
-var dailyGrams = 856;
 var app = express();
 
 /* Using the sessions */
@@ -24,7 +23,7 @@ we create an empty one in the form of an array before continuing */
 
 /* The to do list and the form are displayed */
 .get('/todo', function(req, res) {
-    res.render('todo.ejs', {todolist: req.session.todolist, sumGrams: sumGrams, dailyGrams: dailyGrams});
+    res.render('todo.ejs', {todolist: req.session.todolist, sumGrams: sumGrams, dailyGrams: req.session.dailyGrams});
 })
 
 /* Adding an item to the to do list */
@@ -34,6 +33,16 @@ we create an empty one in the form of an array before continuing */
     }
     res.redirect('/todo');
 })
+
+/* Adding an item to the to do list */
+.post('/todo/daily/', urlencodedParser, function(req, res) {
+    if (req.body.dailygs != '') {
+        req.session.dailyGrams = req.body.dailygs;
+    }
+    res.redirect('/todo');
+})
+
+
 
 /* Deletes an item from the to do list */
 .get('/todo/delete/:id', function(req, res) {

@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-
+<link href="https://fonts.googleapis.com/css?family=Exo+2:900&display=swap" rel="stylesheet">
     <title>Grams</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
@@ -38,6 +38,10 @@ body {
   background-color: #f5f5f5;
 }
 
+      h1 {
+        font-family: 'Exo 2', sans-serif;
+        font-size: 5rem;
+      }
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -68,7 +72,7 @@ body {
 
     <body class="text-center">
 
-        <% if (todolist.length < 1 || todolist == undefined) { %>
+        <% if (todolist.length < 1 && dailyGrams == 0) { %>
       <form action="/todo/daily/" method="post" class="form-signin">
       <h1 class="h3 mb-3 font-weight-normal">Grams</h1>                             
         
@@ -79,21 +83,7 @@ body {
         
                 <input type="number" class="form-control" name="dailygs" placeholder="Enter your daily grams" id="dailygs" autofocus />
                   <button class="btn btn-lg btn-primary btn-block" type="submit">Add!</button>
-            </p>
-        
-        <ul class="list-group">
-        <% todolist.forEach(function(todo, index) { %>
-            <li class="list-group-item"><a href="/todo/delete/<%= index %>"><i class="far fa-trash-alt" style="color: red;"></i></a> <a href="/todo/delete/<%= index %>"><%= todo %></a></li>
-        <% }); %>
-        </ul>
-      <% } %>
-</form>
-        
-        
-        
-        
-        
-        
+      </form>  
         
         
         
@@ -103,7 +93,7 @@ body {
         
         <% } else { %>
         <form action="/todo/add/" method="post" class="form-signin">
-      <h1 class="h3 mb-3 font-weight-normal">Grams</h1>
+      <h1>Grams</h1>
 <% todolist.forEach(function(todo, index) { %>
     <% sumGrams = sumGrams + Number(todo); %>
 <% }); %>
