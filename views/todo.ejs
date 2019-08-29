@@ -85,7 +85,7 @@ body {
         
         
                 <input type="number" class="form-control" name="dailygs" placeholder="Enter your daily grams" id="dailygs" autofocus />
-                  <button class="btn btn-lg btn-primary btn-block" type="submit">Add!</button>
+                  <br><button class="btn btn-lg btn-primary btn-block" type="submit">Add!</button>
       </form>  
         
         
@@ -100,17 +100,17 @@ body {
 <% todolist.forEach(function(todo, index) { %>
     <% sumGrams = sumGrams + Number(todo); %>
 <% }); %>
-          <p><strong><%= dailyGrams - sumGrams %></strong> out of <strong><a href="/todo/daily/delete/" title="Reset daily grams"><%= dailyGrams %></a></strong> grams are available for consumption. <br>You have eaten <strong><%= sumGrams %></strong> grams.<br>
+          <p><strong><%= dailyGrams - sumGrams %></strong> out of <strong><a href="/todo/daily/delete/" title="Reset daily grams" onclick="return confirm('Are you sure?')"><%= dailyGrams %></a></strong> grams are available for consumption. <br>You have eaten <strong><%= sumGrams %></strong> grams.<br>
   
           
                 <p></p>
                 <input type="number" class="form-control" name="newtodo" placeholder="Enter your eaten grams" id="newtodo" autofocus />
-                  <button class="btn btn-lg btn-primary btn-block" type="submit">Add!</button>
+                  <br><button class="btn btn-lg btn-primary btn-block" type="submit">Add!</button>
             </p>
         
         <ul class="list-group">
         <% todolist.forEach(function(todo, index) { %>
-            <li class="list-group-item"><a href="/todo/delete/<%= index %>" title="Delete"><i class="far fa-trash-alt" style="color: red;"></i></a> <a href="/todo/delete/<%= index %>" title="Delete"><%= todo %></a></li>
+            <li class="list-group-item"><a href="/todo/delete/<%= index %>" title="Delete" onclick="return confirm('Are you sure?')"><i class="far fa-trash-alt" style="color: red;"></i></a> <a href="/todo/delete/<%= index %>" title="Delete" onclick="return confirm('Are you sure?')"><%= todo %></a></li>
         <% }); %>
         </ul>
       <% } %>
