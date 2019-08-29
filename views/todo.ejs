@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<% todolist.forEach(function(todo, index) { %>
-    <% sumGrams = sumGrams + Number(todo); %>
-<% }); %>
+
 <html lang="en">
   <head>
     
@@ -71,7 +69,10 @@ body {
     <body class="text-center">
       <form action="/todo/add/" method="post" class="form-signin">
       <h1 class="h3 mb-3 font-weight-normal">Grams</h1>
-
+        if todolist[0] 
+<% todolist.forEach(function(todo, index) { %>
+    <% sumGrams = sumGrams + Number(todo); %>
+<% }); %>
         <p><strong><%= dailyGrams - sumGrams %></strong> out of <strong><%= dailyGrams %></strong> grams are available for consumption. <br>You have eaten <strong><%= sumGrams %></strong> grams.<br><br>
   
           <br>
