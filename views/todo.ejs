@@ -6,21 +6,20 @@
     <head>
         <title>Grams</title>
 
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
             <link rel="stylesheet" href="/style.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
     </head>
 
     <body class="text-center">
-                     <div class="container-fluid">
-   <div class="form-group">
-          <h1 class="display-1">Grams</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Grams</h1>
 
         <p><strong><%= dailyGrams - sumGrams %></strong> out of <strong><%= dailyGrams %></strong> grams are available for consumption. <br>You have eaten <strong><%= sumGrams %></strong> grams.<br><br>
   
           <br>
           
-          <form action="/todo/add/" method="post">
+          <form action="/todo/add/" method="post" class="todoform">
+            <div class="form-group">
             <p></p>
                 <div class="input-group"><input type="number" class="form-control" name="newtodo" placeholder="Enter your eaten grams" id="newtodo" autofocus />
                   <button class="btn btn-primary">Add!</button></div>
