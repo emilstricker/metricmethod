@@ -1,0 +1,11 @@
+---
+application:
+  name: "metric-method"
+  project: "MetricMethod"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-metric-method"
+  routes:
+  - application_name: "metric-method"
+    paths:
+    - "/*"
